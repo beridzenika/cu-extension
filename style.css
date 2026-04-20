@@ -1,0 +1,147 @@
+body > table > tbody > tr:first-child {
+  display: none;
+}
+
+
+.main{
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100vh;
+}
+.main tbody tr td:nth-child(1) div {
+    padding: 20px;
+	height: 100%;
+}
+.main tbody tr td div a {
+	font-size: 16px;
+    
+}
+a:hover{
+    color: #428bca;
+    transition: all 0.2s cubic-bezier(.50, .50, .50, .50);
+}
+.titlehdr{
+    color: #ffa200 !important;
+    border-bottom: none !important;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+#my-overlay {
+    background-color: transparent;
+}
+
+#clean-table {
+    margin-left: 10px;
+    width: auto;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+#clean-table thead tr {
+background: #336799;
+color: #f0f1f2;
+}
+
+#clean-table thead th {
+padding: 12px 14px;
+text-align: left;
+font-weight: 500;
+letter-spacing: 0.03em;
+font-size: 16px;
+text-transform: uppercase;
+}
+
+#clean-table thead th:first-child { border-radius: 8px 0 0 0; }
+#clean-table thead th:last-child  { border-radius: 0 8px 0 0; }
+
+#clean-table tbody tr {
+    background: #f0f1f2;
+    border-bottom: 1px solid #e0e2e4;
+    transition: background 0.15s;
+}
+
+#clean-table tbody tr.current {
+    background-color: #f7f7f7;
+}
+#clean-table tbody tr:hover {
+background: #dde5ee;
+}
+
+.current .credit {
+background: #ffa200 !important;
+}
+
+#clean-table tbody td {
+padding: 10px 14px;
+color: #2a2a2a;
+}
+
+.badge {
+font-size: 16px !important;
+background: #888 !important;
+color: #f0f1f2 !important;
+}
+
+.grade-a  { background: #2e7d4f !important; }
+.grade-b  { background: #ffa200 !important; }
+.grade-c  { background: #336799 !important; }
+.grade-f  { background: #cc0000 !important; }
+
+.subject-btn {
+background: none;
+border: 1px solid #ccc;
+border-radius: 10px;
+padding: 5px;
+margin: 0 -5px;
+color: #336799;
+font-size: 14px;
+cursor: pointer;
+text-decoration: underline;
+text-underline-offset: 3px;
+}
+
+.subject-btn:hover { 
+    color: #ffa200; 
+    background-color: white;
+}
+
+.semester-tag {
+font-size: 11px;
+color: #888;
+font-weight: 500;
+}
+
+#search-bar {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 14px;
+}
+
+#search-bar input {
+flex: 1;
+padding: 8px 12px;
+border: 1px solid #ccc;
+border-radius: 6px;
+font-size: 14px;
+outline: none;
+background: #f0f1f2;
+color: #2a2a2a;
+transition: border 0.2s;
+}
+
+#search-bar input:focus { border-color: #336799; }
+
+#table-title {
+font-size: 18px;
+font-weight: 500;
+color: #336799;
+margin-bottom: 4px;
+}
+
+#table-sub {
+font-size: 13px;
+color: #888;
+margin-bottom: 16px;
+}
