@@ -5,11 +5,12 @@
   "content_scripts": [
     {
       "matches": ["https://programs.cu.edu.ge/students/*"],
-      "css": ["style.css"]
+      "css": ["style.css"],
+      "js": ["general.js"]
     },
     {
       "matches": ["https://programs.cu.edu.ge/students/gpa.php"],
-      "js": ["content.js"]
+      "js": ["credits.js"]
     }
   ]
 }

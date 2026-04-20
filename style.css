@@ -1,41 +1,82 @@
+@font-face {
+  font-family: 'BPG Arial';
+  src: url('https://cdn.jsdelivr.net/npm/bpg-arial@1.0.0/fonts/bpg-arial-webfont.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/npm/bpg-arial@1.0.0/fonts/bpg-arial-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'bpg_square_banner_caps_2013Rg';
+  src: url('https://cdn.jsdelivr.net/gh/web-fonts/ttf@master/bpg-square-banner-caps-2013-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+    font-family: "BPG Arial", sans-serif;
+}
+
 body > table > tbody > tr:first-child {
   display: none;
 }
 
-
+tbody tr:nth-child(2):nth-child(2) {
+    margin-left: 10px;
+    width: auto;
+}
 .main{
     padding: 0 !important;
     margin: 0 !important;
     height: 100vh;
+    width: 100%;
 }
 .main tbody tr td:nth-child(1) div {
-    padding: 20px;
+    padding-top: 20px;
 	height: 100%;
 }
+p {
+    margin: 0 !important;
+}
+.main tbody tr td div br {
+    display: none;
+}
 .main tbody tr td div a {
+    color: #f0f1f2 !important;
 	font-size: 16px;
-    
+    padding: 10px 20px;
+    display: block;
+    font-family: "BPG Arial", sans-serif;
+}
+.main tbody tr td div a:hover, .active-link {
+    background: #305c7a;
+    text-decoration: none;
 }
 a:hover{
     color: #428bca;
     transition: all 0.2s cubic-bezier(.50, .50, .50, .50);
 }
+
+.main tbody tr td:nth-child(2) {
+    padding: 0 20px;
+}
+
 .titlehdr{
     color: #ffa200 !important;
     border-bottom: none !important;
     font-weight: bold;
-    padding: 0 10px;
+    font-family: 'bpg_square_banner_caps_2013Rg', sans-serif;
 }
 
 #my-overlay {
     background-color: transparent;
+    margin-bottom: 50px;
 }
 
 #clean-table {
-    margin-left: 10px;
     width: auto;
     border-collapse: collapse;
     font-size: 14px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 #clean-table thead tr {
@@ -49,11 +90,9 @@ a:hover{
     font-weight: 500;
     letter-spacing: 0.03em;
     font-size: 16px;
-    text-transform: uppercase;
+    font-family: 'bpg_square_banner_caps_2013Rg', sans-serif;
 }
 
-#clean-table thead th:first-child { border-radius: 8px 0 0 0; }
-#clean-table thead th:last-child  { border-radius: 0 8px 0 0; }
 
 #clean-table tbody tr {
     background: #dde5ee;
