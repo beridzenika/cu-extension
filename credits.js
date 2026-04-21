@@ -104,7 +104,7 @@ async function init() {
         <tr>
           <td><span class="semester-tag">${row.semester}</span></td>
           <td><button class="subject-btn">${row.subject}</button></td>
-          <td>${row.name}</td>
+          <td class="course-title">${row.name}</td>
           <td><span class="badge credit">${row.credits}</span></td>
           <td>${Math.trunc(row.percent)}%</td>
           <td><span class="badge ${gradeClass(row.grade)}">${row.grade}</span></td>
@@ -126,7 +126,8 @@ async function init() {
         <tr class="summary-row">
           <td colspan="4" class="summary-lable"><span>${row.label}</span></td>
           <td>${row.percent}${row.label.includes('პროცენტი')? '%': ''}</td>
-          <td colspan="2">${row.credits}</td>
+          <td>${row.credits}</td>
+          <td></td>
         </tr>
       `;
       newTr.className = 'summary-row';

@@ -15,6 +15,10 @@
     font-family: "BPG Arial", sans-serif;
 }
 
+body {
+    background: #f7f7f7;
+}
+
 body > table > tbody > tr:first-child {
   display: none;
 }
@@ -23,6 +27,8 @@ tbody tr:nth-child(2):nth-child(2) {
     margin-left: 10px;
     width: auto;
 }
+
+
 .main{
     padding: 0 !important;
     margin: 0 !important;
@@ -50,8 +56,9 @@ p {
     background: #305c7a;
     text-decoration: none;
 }
-a:hover{
+a:hover *{
     color: #428bca;
+    text-decoration: none;
     transition: all 0.2s cubic-bezier(.50, .50, .50, .50);
 }
 
@@ -59,6 +66,38 @@ a:hover{
     padding: 0 20px;
 }
 
+
+/* menu */
+.forms {
+    background-color: transparent !important;
+    border: none !important;
+    width: max-content !important;
+}
+.forms h3 {
+    color: #16263e;
+    font-style: normal;
+    text-decoration: none;
+}
+.forms a {
+    font-size: 16px;
+    font-family: 'bpg_square_banner_caps_2013Rg';
+    padding: 13px 25px 15px;
+    display: block;
+    color: #16263e;
+    border-bottom: 1px solid #eaeaea;
+    border-left: 4px solid transparent;
+}
+.forms a:hover {
+    border-left: 4px solid #2d71a4;
+    color: #428bca;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(.50, .50, .50, .50);
+}
+
+
+
+
+/* gpa page */
 .titlehdr{
     color: #ffa200 !important;
     border-bottom: none !important;
@@ -75,8 +114,8 @@ a:hover{
     width: auto;
     border-collapse: collapse;
     font-size: 14px;
-    border-radius: 10px;
-    overflow: hidden;
+    border-radius: 0px;
+    border: 3px solid #16263e;
 }
 
 #clean-table thead tr {
@@ -90,13 +129,13 @@ a:hover{
     font-weight: 500;
     letter-spacing: 0.03em;
     font-size: 16px;
+    text-align: center;
     font-family: 'bpg_square_banner_caps_2013Rg', sans-serif;
 }
 
 
 #clean-table tbody tr {
     background: #dde5ee;
-    border-bottom: 1px solid #d9d9d9;
     transition: background 0.25s;
 }
 
@@ -108,18 +147,26 @@ a:hover{
 }
 
 .current .credit {
+    border-radius: 0 9 !important;
     background: #ffa200 !important;
 }
 
 #clean-table tbody td {
     padding: 10px 14px;
     color: #2a2a2a;
+    border: 1px solid #16263e;
+    text-align: center;
+}
+#clean-table .course-title {
+    text-align: left;
 }
 
 .badge {
     font-size: 16px !important;
     background: #888 !important;
-    color: #f0f1f2 !important;
+    color: white !important;
+    padding: 5px 8px !important;
+    border-radius: 60px !important;
 }
 
 .grade-a  { background: #2e7d4f !important; }
@@ -146,7 +193,6 @@ a:hover{
 }
 
 .semester-tag {
-    font-size: 11px;
     color: #888;
     font-weight: 500;
 }
@@ -187,13 +233,11 @@ a:hover{
 
 .summary-row {
     background: #5a6b82 !important;
-    border: none !important;
-
 }
 .summary-row td {
     color: #ccc !important;
 }
 .summary-lable {
-    text-align: end;
+    text-align: end !important;
     padding: 10px 45px !important;
 }
