@@ -146,10 +146,26 @@ a:hover *{
     background: #ccc;
 }
 
-.current .credit {
-    border-radius: 0 9 !important;
-    background: #ffa200 !important;
+.credit, .badge {
+    font-size: 16px !important;
+    background: #888 !important;
+    color: white !important;
+    padding: 5px 8px !important;
 }
+
+.credit { 
+    border-radius: 0px !important; 
+}
+.current .credit { background: #ffa200 !important; }
+
+.badge {
+    border-radius: 60px !important;
+}
+
+.grade-a  { background: #2e7d4f !important; }
+.grade-b  { background: #ffa200 !important; }
+.grade-c  { background: #336799 !important; }
+.grade-f  { background: #cc0000 !important; }
 
 #clean-table tbody td {
     padding: 10px 14px;
@@ -160,19 +176,6 @@ a:hover *{
 #clean-table .course-title {
     text-align: left;
 }
-
-.badge {
-    font-size: 16px !important;
-    background: #888 !important;
-    color: white !important;
-    padding: 5px 8px !important;
-    border-radius: 60px !important;
-}
-
-.grade-a  { background: #2e7d4f !important; }
-.grade-b  { background: #ffa200 !important; }
-.grade-c  { background: #336799 !important; }
-.grade-f  { background: #cc0000 !important; }
 
 .subject-btn {
     background: none;

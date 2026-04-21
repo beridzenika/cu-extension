@@ -105,7 +105,7 @@ async function init() {
           <td><span class="semester-tag">${row.semester}</span></td>
           <td><button class="subject-btn">${row.subject}</button></td>
           <td class="course-title">${row.name}</td>
-          <td><span class="badge credit">${row.credits}</span></td>
+          <td><span class="credit">${row.credits}</span></td>
           <td>${Math.trunc(row.percent)}%</td>
           <td><span class="badge ${gradeClass(row.grade)}">${row.grade}</span></td>
           <td>${row.score}</td>
