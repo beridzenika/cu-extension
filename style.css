@@ -16,12 +16,10 @@
 }
 
 body {
+    margin: 0;
     background: #f7f7f7;
 }
 
-body > table > tbody > tr:first-child {
-  display: none;
-}
 
 tbody tr:nth-child(2):nth-child(2) {
     margin-left: 10px;
