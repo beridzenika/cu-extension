@@ -114,13 +114,15 @@ a:hover *{
     font-family: 'bpg_square_banner_caps_2013Rg', sans-serif;
 }
 
-#credits-overlay {
+#credits-overlay, #sorce-overlay {
     background-color: transparent;
     margin-bottom: 50px;
+    width: 100%;
+    max-width: 1160px;
 }
 
 #clean-table {
-    width: auto;
+    width: 100%;
     border-collapse: collapse;
     font-size: 14px;
     border-radius: 0px;
@@ -264,27 +266,32 @@ a:hover *{
     display: flex;
     flex-direction: column;
     align-items: end;
-    background: none;
-    width: max-content;
+}
+#sorce-overlay .btn-primary {
+    width: 100%;
+    border: none;
+    border-radius: 0;
 }
 
 #semester-dropdown {
     width: max-content;
+    position: relative;
     font-size: 14px;
     margin: 10px 0;
 }
 #semester-selected {
-    padding: 8px;
+    padding: 8px 20px 8px 10px;
     color: var(--white);
     border: 3px solid var(--border-color);
 }
 #semester-options {
     position: absolute;
+    width: 100%;
     border: 3px solid var(--border-color);
     border-top: none;
 }
 .semester-option {
-    padding: 8px;
+    padding: 8px 10px;
     background: var(--light);
 }
 .semester-option:hover{

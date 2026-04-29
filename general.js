@@ -21,8 +21,11 @@ const selectBtn = form.querySelector('input[type="submit"]:not(#submit5)');
 const wrapper = document.createElement('div');
 wrapper.id = 'semester-dropdown';
 
-options[0].checked = true;
-const selected_val = [...options].find(o => o.checked);
+const params = new URL(window.location.href).searchParams;
+const savedSem = params.get('ext_sem');
+const selected_val = savedSem ?
+                     options.find(o => o.value === savedSem) :
+                     options.reduce((max, o) => o.value > max.value ? o : max, options[0]);
 
 const selected = document.createElement('div');
 selected.id = 'semester-selected';
@@ -43,6 +46,10 @@ options.forEach(opt => {
     option.textContent = label;
 
     option.addEventListener('click', () => {
+        const url = new URL(window.location.href);
+        url.searchParams.set('ext_sem', opt.value);
+        window.history.replaceState({}, '', url);
+
         opt.checked = true;
         selectBtn.click();
     })
@@ -51,7 +58,6 @@ options.forEach(opt => {
 });
 selected.addEventListener('click', () => {
     isOpen = !isOpen;
-    console.log(isOpen);
     optionList.style.display = isOpen ? 'block' : 'none';
 });
 
