@@ -74,7 +74,7 @@ async function init() {
 
   // create header
   const container = document.createElement('div');
-  container.id = 'my-overlay';
+  container.id = 'credits-overlay';
   container.innerHTML = `
     <table id="clean-table">
       <thead>

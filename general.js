@@ -18,23 +18,43 @@ const form = document.querySelector('form[name="form1"]');
 const options = [...form.querySelectorAll('input[id="sem_id1"]')];
 const selectBtn = form.querySelector('input[type="submit"]:not(#submit5)');
 
-const dropdown = document.createElement('select');
-dropdown.id = 'semester-select';
+const wrapper = document.createElement('div');
+wrapper.id = 'semester-dropdown';
+
+options[0].checked = true;
+const selected_val = [...options].find(o => o.checked);
+
+const selected = document.createElement('div');
+selected.id = 'semester-selected';
+selected.textContent = selected_val.nextSibling?.textContent?.trim();
+wrapper.appendChild(selected);
+
+const optionList = document.createElement('div');
+optionList.id = 'semester-options';
+optionList.style.display = 'none';
+let isOpen = false;
+wrapper.appendChild(optionList);
 
 options.forEach(opt => {
     const label = opt.nextSibling?.textContent?.trim();
-    const option = document.createElement('option');
+    const option = document.createElement('div');
+    option.className = 'semester-option';
     option.value = opt.value;
     option.textContent = label;
-    dropdown.appendChild(option);
+
+    option.addEventListener('click', () => {
+        opt.checked = true;
+        selectBtn.click();
+    })
+
+    optionList.appendChild(option);
+});
+selected.addEventListener('click', () => {
+    isOpen = !isOpen;
+    console.log(isOpen);
+    optionList.style.display = isOpen ? 'block' : 'none';
 });
 
-dropdown.addEventListener('change', e => {
-    options.forEach(opt => opt.checked = false);
-    const target = options.find(o => o.value === e.target.value);
-    if (target) target.checked = true;
-    selectBtn.click();
-});
 
 // silabus/sorces table
 const rows = [...selectBtn.nextElementSibling.nextSibling.querySelectorAll('tr')];
@@ -43,10 +63,8 @@ const headerRows = [...rows[0].children]
                     .join('');
 
 const container = document.createElement('div');
-container.id = 'my-overlay';
-
+container.id = 'sorce-overlay';
 container.innerHTML = `
-
     <table id="clean-table">
         <thead>
             <tr>
@@ -56,6 +74,8 @@ container.innerHTML = `
         <tbody id="clean-tbody"></tbody>
     </table>
 `;
+container.prepend(wrapper);
+
 const tbody = container.querySelector('#clean-tbody');
 rows.slice(1).forEach(tr => {
     const newRow = document.createElement('tr');
@@ -68,7 +88,5 @@ rows.slice(1).forEach(tr => {
 
     tbody.appendChild(newRow);
 });
-container.appendChild(dropdown);
-
 form.style.display = 'none';
 form.insertAdjacentElement('afterend', container);

@@ -15,6 +15,10 @@
 :root {
     --blue: #336799;
     --yellow: #ffa200;
+    --white: #f0f1f2;
+    --light: #f7f7f7;
+    --tr-light: #dde5ee;
+    --border-color: #16263e;
 }
 
 
@@ -24,7 +28,7 @@
 
 body {
     margin: 0;
-    background: #f7f7f7;
+    background: var(--light);
 }
 
 
@@ -51,7 +55,7 @@ p {
     display: none;
 }
 .main tbody tr td div a {
-    color: #f0f1f2 !important;
+    color: var(--white) !important;
 	font-size: 16px;
     padding: 10px 20px;
     display: block;
@@ -79,7 +83,7 @@ a:hover *{
     width: max-content !important;
 }
 .forms h3 {
-    color: #16263e;
+    color: var(--border-color);
     font-style: normal;
     text-decoration: none;
 }
@@ -88,7 +92,7 @@ a:hover *{
     font-family: 'bpg_square_banner_caps_2013Rg';
     padding: 13px 25px 15px;
     display: block;
-    color: #16263e;
+    color: var(--border-color);
     border-bottom: 1px solid #eaeaea;
     border-left: 4px solid transparent;
 }
@@ -110,7 +114,7 @@ a:hover *{
     font-family: 'bpg_square_banner_caps_2013Rg', sans-serif;
 }
 
-#my-overlay {
+#credits-overlay {
     background-color: transparent;
     margin-bottom: 50px;
 }
@@ -120,12 +124,12 @@ a:hover *{
     border-collapse: collapse;
     font-size: 14px;
     border-radius: 0px;
-    border: 3px solid #16263e;
+    border: 3px solid var(--border-color);
 }
 
 #clean-table thead tr {
     background: var(--blue);
-    color: #f0f1f2;
+    color: var(--white);
 }
 
 #clean-table thead th {
@@ -140,12 +144,12 @@ a:hover *{
 
 
 #clean-table tbody tr {
-    background: #dde5ee;
+    background: var(--tr-light);
     transition: background 0.25s;
 }
 
 #clean-table tbody tr.current {
-    background-color: #f7f7f7;
+    background-color: var(--light);
 }
 #clean-table tbody tr:hover {
     background: #ccc;
@@ -175,7 +179,7 @@ a:hover *{
 #clean-table tbody td {
     padding: 10px 14px;
     color: #2a2a2a;
-    border: 1px solid #16263e;
+    border: 1px solid var(--border-color);
     text-align: center;
 }
 #clean-table .course-title {
@@ -197,7 +201,7 @@ a:hover *{
 
 .subject-btn:hover, .submit_masala:hover { 
     color: var(--yellow); 
-    background-color: #f7f7f7;
+    background-color: var(--light);
 }
 
 .semester-tag {
@@ -219,7 +223,7 @@ a:hover *{
     border-radius: 6px;
     font-size: 14px;
     outline: none;
-    background: #f0f1f2;
+    background: var(--white);
     color: #2a2a2a;
     transition: border 0.2s;
 }
@@ -251,7 +255,39 @@ a:hover *{
 }
 
 
-/* silabus/sorce table */
 #clean-tbody form {
     margin: 0;
+}
+
+/* selected options */
+#sorce-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    background: none;
+    width: max-content;
+}
+
+#semester-dropdown {
+    width: max-content;
+    font-size: 14px;
+    margin: 10px 0;
+}
+#semester-selected {
+    padding: 8px;
+    color: var(--white);
+    border: 3px solid var(--border-color);
+}
+#semester-options {
+    position: absolute;
+    border: 3px solid var(--border-color);
+    border-top: none;
+}
+.semester-option {
+    padding: 8px;
+    background: var(--light);
+}
+.semester-option:hover{
+    background: var(--tr-light);
+    color: var(--blue);
 }
