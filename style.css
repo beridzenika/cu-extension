@@ -11,6 +11,13 @@
   font-weight: normal;
   font-style: normal;
 }
+
+:root {
+    --blue: #336799;
+    --yellow: #ffa200;
+}
+
+
 * {
     font-family: "BPG Arial", sans-serif;
 }
@@ -97,7 +104,7 @@ a:hover *{
 
 /* gpa page */
 .titlehdr{
-    color: #ffa200 !important;
+    color: var(--yellow) !important;
     border-bottom: none !important;
     font-weight: bold;
     font-family: 'bpg_square_banner_caps_2013Rg', sans-serif;
@@ -117,7 +124,7 @@ a:hover *{
 }
 
 #clean-table thead tr {
-    background: #336799;
+    background: var(--blue);
     color: #f0f1f2;
 }
 
@@ -154,15 +161,15 @@ a:hover *{
 .credit { 
     border-radius: 0px !important; 
 }
-.current .credit { background: #ffa200 !important; }
+.current .credit { background: var(--yellow) !important; }
 
 .badge {
     border-radius: 60px !important;
 }
 
 .grade-a  { background: #2e7d4f !important; }
-.grade-b  { background: #ffa200 !important; }
-.grade-c  { background: #336799 !important; }
+.grade-b  { background: var(--yellow) !important; }
+.grade-c  { background: var(--blue) !important; }
 .grade-f  { background: #cc0000 !important; }
 
 #clean-table tbody td {
@@ -175,21 +182,21 @@ a:hover *{
     text-align: left;
 }
 
-.subject-btn {
+.subject-btn, .submit_masala {
     background: none;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 5px;
     margin: 0 -5px;
-    color: #336799;
+    color: var(--blue);
     font-size: 14px;
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 3px;
 }
 
-.subject-btn:hover { 
-    color: #ffa200; 
+.subject-btn:hover, .submit_masala:hover { 
+    color: var(--yellow); 
     background-color: #f7f7f7;
 }
 
@@ -217,12 +224,12 @@ a:hover *{
     transition: border 0.2s;
 }
 
-#search-bar input:focus { border-color: #336799; }
+#search-bar input:focus { border-color: var(--blue); }
 
 #table-title {
     font-size: 18px;
     font-weight: 500;
-    color: #336799;
+    color: var(--blue);
     margin-bottom: 4px;
 }
 
@@ -241,4 +248,10 @@ a:hover *{
 .summary-lable {
     text-align: end !important;
     padding: 10px 45px !important;
+}
+
+
+/* silabus/sorce table */
+#clean-tbody form {
+    margin: 0;
 }

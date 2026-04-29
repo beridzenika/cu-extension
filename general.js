@@ -1,8 +1,11 @@
 // top space issue
-const top_space = document.querySelector("body > table > tbody > tr:first-child > td");
-if (top_space && top_space.innerHTML.trim() === "&nbsp;") {
-    top_space.style.display = 'none';
-}
+const spaceTr = document.querySelectorAll("body > table > tbody > tr > td");
+spaceTr.forEach(space => {
+    if (space && space.innerHTML.trim() === "&nbsp;") {
+        space.style.display = 'none';
+    }
+});
+
 
 // nav menu links
 const links = document.querySelectorAll('tbody tr:nth-child(2) td div a');
@@ -33,4 +36,39 @@ dropdown.addEventListener('change', e => {
     selectBtn.click();
 });
 
-form.appendChild(dropdown);
+// silabus/sorces table
+const rows = [...selectBtn.nextElementSibling.nextSibling.querySelectorAll('tr')];
+const headerRows = [...rows[0].children]
+                    .map(cell => `<th>${cell.textContent}</th>`)
+                    .join('');
+
+const container = document.createElement('div');
+container.id = 'my-overlay';
+
+container.innerHTML = `
+
+    <table id="clean-table">
+        <thead>
+            <tr>
+                ${headerRows}
+            </tr>
+        </thead>
+        <tbody id="clean-tbody"></tbody>
+    </table>
+`;
+const tbody = container.querySelector('#clean-tbody');
+rows.slice(1).forEach(tr => {
+    const newRow = document.createElement('tr');
+
+    [...tr.children].forEach(cell => {
+        const newCell = document.createElement('td');
+        newCell.innerHTML = cell.innerHTML;
+        newRow.appendChild(newCell);
+    });
+
+    tbody.appendChild(newRow);
+});
+container.appendChild(dropdown);
+
+form.style.display = 'none';
+form.insertAdjacentElement('afterend', container);
