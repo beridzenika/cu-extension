@@ -44,7 +44,7 @@ blocks.forEach( block => {
         <table class="sorce-table">
             <thead>
                 <tr>
-                    <td>სასწავლო მასალის დასახელება</td>
+                    <td style="width: 40%">სასწავლო მასალის დასახელება</td>
                     <td>ფაილის დასახელება</td>
                 </tr>
             </thead>
