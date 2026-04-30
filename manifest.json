@@ -11,6 +11,10 @@
     {
       "matches": ["https://programs.cu.edu.ge/students/gpa.php"],
       "js": ["credits.js"]
+    },
+    {
+      "matches": ["https://programs.cu.edu.ge/students/masalebi.php"],
+      "js": ["sorces.js"]
     }
   ]
 }

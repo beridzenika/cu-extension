@@ -14,9 +14,15 @@
 
 :root {
     --blue: #336799;
+    --light-blue: #428bca;
     --yellow: #ffa200;
+    --red: #cc0000;
+    --green: #2e7d4f;
     --white: #f0f1f2;
     --light: #f7f7f7;
+    --light-gray: #ccc;
+    --gray: #888;
+    --dark-gray: #2a2a2a;
     --tr-light: #dde5ee;
     --border-color: #16263e;
 }
@@ -31,20 +37,24 @@ body {
     background: var(--light);
 }
 
-
-tbody tr:nth-child(2):nth-child(2) {
-    margin-left: 10px;
-    width: auto;
-}
-
-
 .main{
     padding: 0 !important;
     margin: 0 !important;
     height: 100vh;
     width: 100%;
 }
-.main tbody tr td:nth-child(1) div {
+
+.main > tbody > tr:nth-child(2):nth-child(2) {
+    display: grid;
+    grid-template-columns: 300px auto;
+    width: auto;
+    height: 100vh;
+}
+.main > tbody > tr:nth-child(2):nth-child(2) > td {
+    width: 100%;
+}
+
+.main > tbody > tr > td:nth-child(1) div {
     padding-top: 20px;
 	height: 100%;
 }
@@ -66,7 +76,7 @@ p {
     text-decoration: none;
 }
 a:hover *{
-    color: #428bca;
+    color: var(--light-blue);
     text-decoration: none;
     transition: all 0.2s cubic-bezier(.50, .50, .50, .50);
 }
@@ -98,7 +108,7 @@ a:hover *{
 }
 .forms a:hover {
     border-left: 4px solid #2d71a4;
-    color: #428bca;
+    color: var(--light-blue);
     text-decoration: none;
     transition: all 0.2s cubic-bezier(.50, .50, .50, .50);
 }
@@ -107,10 +117,11 @@ a:hover *{
 
 
 /* gpa page */
-.titlehdr{
+.titlehdr, .titlehdr2 {
     color: var(--yellow) !important;
     border-bottom: none !important;
     font-weight: bold;
+    font-size: 24px;
     font-family: 'bpg_square_banner_caps_2013Rg', sans-serif;
 }
 
@@ -154,12 +165,12 @@ a:hover *{
     background-color: var(--light);
 }
 #clean-table tbody tr:hover {
-    background: #ccc;
+    background: var(--light-gray);
 }
 
 .credit, .badge {
     font-size: 16px !important;
-    background: #888 !important;
+    background: var(--gray) !important;
     color: white !important;
     padding: 5px 8px !important;
 }
@@ -173,14 +184,14 @@ a:hover *{
     border-radius: 60px !important;
 }
 
-.grade-a  { background: #2e7d4f !important; }
+.grade-a  { background: var(--green) !important; }
 .grade-b  { background: var(--yellow) !important; }
 .grade-c  { background: var(--blue) !important; }
-.grade-f  { background: #cc0000 !important; }
+.grade-f  { background: var(--red) !important; }
 
 #clean-table tbody td {
     padding: 10px 14px;
-    color: #2a2a2a;
+    color: var(--dark-gray);
     border: 1px solid var(--border-color);
     text-align: center;
 }
@@ -190,7 +201,7 @@ a:hover *{
 
 .subject-btn, .submit_masala {
     background: none;
-    border: 1px solid #ccc;
+    border: 1px solid var(--light-gray);
     border-radius: 10px;
     padding: 5px;
     margin: 0 -5px;
@@ -207,7 +218,7 @@ a:hover *{
 }
 
 .semester-tag {
-    color: #888;
+    color: var(--gray);
     font-weight: 500;
 }
 
@@ -221,12 +232,12 @@ a:hover *{
 #search-bar input {
     flex: 1;
     padding: 8px 12px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--light-gray);
     border-radius: 6px;
     font-size: 14px;
     outline: none;
     background: var(--white);
-    color: #2a2a2a;
+    color: var(--dark-gray);
     transition: border 0.2s;
 }
 
@@ -241,7 +252,7 @@ a:hover *{
 
 #table-sub {
     font-size: 13px;
-    color: #888;
+    color: var(--gray);
     margin-bottom: 16px;
 }
 
@@ -249,7 +260,7 @@ a:hover *{
     background: #5a6b82 !important;
 }
 .summary-row td {
-    color: #ccc !important;
+    color: var(--light-gray) !important;
 }
 .summary-lable {
     text-align: end !important;
@@ -266,6 +277,7 @@ a:hover *{
     display: flex;
     flex-direction: column;
     align-items: end;
+    max-width: 1040px;
 }
 #sorce-overlay .btn-primary {
     width: 100%;
@@ -277,7 +289,7 @@ a:hover *{
     width: max-content;
     position: relative;
     font-size: 14px;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 #semester-selected {
     padding: 8px 20px 8px 10px;
@@ -297,4 +309,56 @@ a:hover *{
 .semester-option:hover{
     background: var(--tr-light);
     color: var(--blue);
+}
+
+/* sorces page */
+.sorce-main {
+    padding: 30px;
+    width: auto;
+}
+#sorces-container {
+    width: 100%;
+}
+.sorce-box {
+    box-shadow: rgba(149, 157, 165, 0.3) 0px 0px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px 5px 15px;
+}
+.sorce-box .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 20px;
+}
+.date {
+    color: var(--red);
+}
+.sorce-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.sorce-table td {
+    border: 1px solid var(--light-gray);
+    padding: 15px 8px;
+}
+.sorce-table thead {
+    font-weight: bold;
+}
+.sorce-table thead td {
+    font-family: bpg_square_banner_caps_2013Rg, sans-serif;
+}
+.sorce-table tbody td {
+    padding: 8px 5px;
+    color: var(--dark-gray);
+}
+.sorce-table tbody tr:nth-child(odd) {
+    background: var(--light);    
+}
+.sorce-table a{
+    color: var(--light-blue);
+    text-decoration: none;
+}
+.sorce-table a:hover{
+    color: var(--yellow);
+    text-decoration: underline;
 }
