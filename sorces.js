@@ -5,7 +5,7 @@ sorceMain.className = 'sorce-main';
 //sorce blocks
 function classifyRow(tr) {
   if (tr.querySelector('td.titlehdr4')) return 'title';
-  if (tr.querySelector('td span.style79')) return 'link';
+  if (tr.querySelector('td a')) return 'link';
   return 'skip';
 }
 const sorceTable = document.querySelectorAll('table')[1];
@@ -56,14 +56,14 @@ blocks.forEach( block => {
         const a = tr.querySelector('a');
         const fullText = a?.innerText.trim();
         if (!fullText) return;
-        const text = fullText.split(' - ')[0];
+        const text = fullText.includes(' - 2') ? fullText.split(' - 2')[0] : fullText.split(' - ')[0];
         const fileType = fullText.split('.')[1];
         const row = document.createElement('tr');
-        console.log(fullText);
+        console.log(a.href);
         row.innerHTML = `
             <td>${text}</td>
             <td>
-                <a href="${a?.href}">${text}${fileType ? '.'+fileType : ''}</a>
+                <a href="${a?.href}" target="_blank">${text}${fileType && !text.includes(fileType) ? '.'+fileType : ''}</a>
             </td>
         `;
         tbody.appendChild(row);
